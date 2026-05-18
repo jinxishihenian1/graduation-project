@@ -1,0 +1,179 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f5f3ef;
+  color: #1f2937;
+  font-family: Arial, sans-serif;
+}
+
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth-card {
+  width: 380px;
+  background: white;
+  padding: 40px;
+  border-radius: 24px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  text-align: center;
+}
+
+.auth-card h1 {
+  margin-bottom: 8px;
+  font-size: 32px;
+}
+
+.auth-card p {
+  color: #6b7280;
+  margin-bottom: 28px;
+}
+
+.auth-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  font-size: 15px;
+}
+
+textarea {
+  height: 120px;
+  resize: none;
+}
+
+button {
+  border: none;
+  border-radius: 16px;
+  padding: 14px;
+  background: #e8a5bd;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.auth-card a {
+  display: block;
+  margin-top: 20px;
+  color: #e8a5bd;
+  text-decoration: none;
+}
+
+.community-page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 40px 24px 100px;
+}
+
+.community-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.community-header h1 {
+  font-size: 36px;
+  margin: 0;
+}
+
+.community-header p {
+  margin-top: 8px;
+  color: #6b7280;
+}
+
+.user-badge {
+  background: #fce7f0;
+  padding: 12px 22px;
+  border-radius: 20px;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.logout-btn {
+  padding: 8px 14px;
+  font-size: 14px;
+  background: #9ca3af;
+}
+
+.mood-box,
+.write-box,
+.post-list {
+  background: white;
+  border-radius: 24px;
+  padding: 28px;
+  margin-top: 24px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+}
+
+.mood-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.mood-grid button {
+  background: #fdeff5;
+  color: #1f2937;
+  height: 90px;
+}
+
+.write-box form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.post-card {
+  background: #fff7fa;
+  border-radius: 20px;
+  padding: 22px;
+  margin-top: 18px;
+}
+
+.post-top {
+  display: flex;
+  justify-content: space-between;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.category {
+  background: #e8a5bd;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 14px;
+}
+
+.post-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.post-actions button {
+  background: white;
+  color: #e8a5bd;
+  border: 1px solid #e8a5bd;
+}
+
+.comments {
+  margin-top: 16px;
+  padding: 12px;
+  background: white;
+  border-radius: 14px;
+}
