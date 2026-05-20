@@ -75,6 +75,7 @@ button {
 
 .community-page {
   max-width: 720px;
+  min-height: 100vh;
   margin: 0 auto;
   padding: 40px 24px 100px;
 }
@@ -176,4 +177,145 @@ button {
   padding: 12px;
   background: white;
   border-radius: 14px;
+}
+.post-info {
+  display: flex;
+  gap: 16px;
+  margin-top: 12px;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.delete-btn {
+  background: #9ca3af;
+  color: white;
+}
+
+.comment-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid #f3f4f6;
+  padding: 8px 0;
+}
+
+.comment-delete-btn {
+  padding: 6px 10px;
+  font-size: 12px;
+  background: #9ca3af;
+  color: white;
+}
+.section-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.participant-badge {
+  background: #fdeff5;
+  color: #374151;
+  padding: 10px 20px;
+  border-radius: 20px;
+}
+
+.mood-grid-six {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.mood-grid button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.mood-emoji {
+  font-size: 28px;
+}
+
+.selected-mood {
+  border: 2px solid #e8a5bd;
+}
+
+.filter-box,
+.ai-box {
+  background: white;
+  border-radius: 24px;
+  padding: 28px;
+  margin-top: 24px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+}
+
+.search-input {
+  margin-bottom: 22px;
+}
+
+.filter-group h3 {
+  margin-bottom: 12px;
+}
+
+.chip-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.chip {
+  background: #f3f4f6;
+  color: #1f2937;
+  padding: 10px 24px;
+  border-radius: 18px;
+}
+
+.active-chip {
+  background: #e8a5bd;
+  color: white;
+}
+
+.ai-box {
+  background: #fff;
+}
+
+.ai-box h2 {
+  margin-top: 0;
+}
+.bg-pink {
+  background: #f5f3ef;
+}
+
+.bg-blue {
+  background: #eef6ff;
+}
+
+.right-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.color-picker {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.color-circle {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  padding: 0;
+}
+
+.pink-circle {
+  background: #f5c2d3;
+}
+
+.blue-circle {
+  background: #b8dcff;
 }

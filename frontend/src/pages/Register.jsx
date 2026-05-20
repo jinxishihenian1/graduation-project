@@ -6,9 +6,13 @@ function Register() {
   const navigate = useNavigate();
 
   const [form, setForm] = useState({
-    username: "",
-    email: "",
-    password: ""
+    USER_NAME: "",
+    USER_EMAIL: "",
+    USER_PW: "",
+    NICKNAME: "",
+    JOB: "",
+    MBTI: "",
+    BIRTH_DATE: ""
   });
 
   const handleChange = (e) => {
@@ -38,30 +42,70 @@ function Register() {
 
         <form onSubmit={handleRegister}>
           <input
-            type="text"
-            name="username"
+            name="USER_NAME"
             placeholder="이름"
-            value={form.username}
+            value={form.USER_NAME}
             onChange={handleChange}
             required
           />
 
           <input
             type="email"
-            name="email"
+            name="USER_EMAIL"
             placeholder="이메일"
-            value={form.email}
+            value={form.USER_EMAIL}
             onChange={handleChange}
             required
           />
 
           <input
             type="password"
-            name="password"
+            name="USER_PW"
             placeholder="비밀번호"
-            value={form.password}
+            value={form.USER_PW}
             onChange={handleChange}
             required
+          />
+
+          <input
+            name="NICKNAME"
+            placeholder="닉네임"
+            value={form.NICKNAME}
+            onChange={handleChange}
+          />
+
+          <input
+            name="JOB"
+            placeholder="직업"
+            value={form.JOB}
+            onChange={handleChange}
+          />
+
+          <select name="MBTI" value={form.MBTI} onChange={handleChange}>
+            <option value="">MBTI 선택</option>
+            <option value="ISTJ">ISTJ</option>
+            <option value="ISFJ">ISFJ</option>
+            <option value="INFJ">INFJ</option>
+            <option value="INTJ">INTJ</option>
+            <option value="ISTP">ISTP</option>
+            <option value="ISFP">ISFP</option>
+            <option value="INFP">INFP</option>
+            <option value="INTP">INTP</option>
+            <option value="ESTP">ESTP</option>
+            <option value="ESFP">ESFP</option>
+            <option value="ENFP">ENFP</option>
+            <option value="ENTP">ENTP</option>
+            <option value="ESTJ">ESTJ</option>
+            <option value="ESFJ">ESFJ</option>
+            <option value="ENFJ">ENFJ</option>
+            <option value="ENTJ">ENTJ</option>
+          </select>
+
+          <input
+            type="date"
+            name="BIRTH_DATE"
+            value={form.BIRTH_DATE}
+            onChange={handleChange}
           />
 
           <button type="submit">회원가입</button>

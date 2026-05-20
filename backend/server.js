@@ -1,5 +1,4 @@
 const express = require("express");
-const mongoose = require("mongoose");
 const cors = require("cors");
 require("dotenv").config();
 
@@ -15,18 +14,9 @@ app.use("/api/auth", authRoutes);
 app.use("/api/community", communityRoutes);
 
 app.get("/", (req, res) => {
-  res.send("Node.js server is running");
+  res.send("Node.js PostgreSQL server is running");
 });
 
-mongoose
-  .connect(process.env.MONGO_URI)
-  .then(() => {
-    console.log("MongoDB connected");
-
-    app.listen(process.env.PORT, () => {
-      console.log(`Server running on port ${process.env.PORT}`);
-    });
-  })
-  .catch((error) => {
-    console.log("MongoDB connection error:", error);
-  });
+app.listen(process.env.PORT, () => {
+  console.log(`Server running on port ${process.env.PORT}`);
+});

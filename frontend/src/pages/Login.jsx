@@ -6,8 +6,8 @@ function Login() {
   const navigate = useNavigate();
 
   const [form, setForm] = useState({
-    email: "",
-    password: ""
+    USER_EMAIL: "",
+    USER_PW: ""
   });
 
   const handleChange = (e) => {
@@ -24,7 +24,8 @@ function Login() {
       const res = await axios.post("http://localhost:5000/api/auth/login", form);
 
       localStorage.setItem("token", res.data.token);
-      localStorage.setItem("username", res.data.user.username);
+      localStorage.setItem("USER_ID", res.data.user.USER_ID);
+      localStorage.setItem("USER_NAME", res.data.user.USER_NAME);
 
       alert("로그인 성공");
       navigate("/community");
@@ -42,18 +43,18 @@ function Login() {
         <form onSubmit={handleLogin}>
           <input
             type="email"
-            name="email"
+            name="USER_EMAIL"
             placeholder="이메일"
-            value={form.email}
+            value={form.USER_EMAIL}
             onChange={handleChange}
             required
           />
 
           <input
             type="password"
-            name="password"
+            name="USER_PW"
             placeholder="비밀번호"
-            value={form.password}
+            value={form.USER_PW}
             onChange={handleChange}
             required
           />
