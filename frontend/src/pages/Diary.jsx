@@ -116,11 +116,28 @@ function Diary() {
         </div>
 
         <div className="mood-legend">
-          <span>😊 좋음</span>
-          <span>😐 보통</span>
-          <span>😢 힘듦</span>
+            <span>
+                <span className="legend-face happy">
+                    <span className="face-mouth"></span>
+                </span>
+                좋음
+            </span>
+
+            <span>
+                <span className="legend-face normal">
+                    <span className="face-mouth"></span>
+                </span>
+                보통
+            </span>
+
+            <span>
+                <span className="legend-face sad">
+                    <span className="face-mouth"></span>
+                </span>
+                힘듬
+            </span>
         </div>
-      </section>
+    </section>
 
       <nav className="bottom-nav">
         <button onClick={() => navigate("/character")}>

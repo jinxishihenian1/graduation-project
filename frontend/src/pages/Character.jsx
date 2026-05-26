@@ -24,19 +24,16 @@ function Character() {
   const moodOptions = [
     {
       label: "좋아요",
-      icon: "😊",
       face: "happy",
       characterText: "기분이 좋아 보여요! 오늘 좋은 일이 있었나요?"
     },
     {
       label: "보통이에요",
-      icon: "😐",
       face: "normal",
       characterText: "사용자님, 오늘 하루는 어떠셨나요?"
     },
     {
       label: "안 좋아요",
-      icon: "😢",
       face: "sad",
       characterText: "오늘은 기분이 좋지 않아 보여요. 함께 있어줄게요."
     }
@@ -53,7 +50,7 @@ function Character() {
 
   const getAIReply = () => {
     if (selectedMood === "좋아요") {
-      return "기분이 좋아 보여요! 오늘의 좋은 감정을 오래 기억해봐요 😊";
+      return "기분이 좋아 보여요! 오늘의 좋은 감정을 오래 기억해봐요.";
     }
 
     if (selectedMood === "보통이에요") {
@@ -146,7 +143,9 @@ function Character() {
               setChatOpen(false);
             }}
           >
-            <span className="mood-face-icon">{mood.icon}</span>
+            <span className={`line-face-icon ${mood.face}`}>
+              <span className="face-mouth"></span>
+            </span>
             <span>{mood.label}</span>
           </button>
         ))}
@@ -326,7 +325,7 @@ function Character() {
         </button>
 
         <button onClick={() => navigate("/diary")}>
-            ▣<span>일기</span>
+          ▣<span>일기</span>
         </button>
 
         <button>

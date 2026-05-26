@@ -1040,3 +1040,137 @@ textarea {
     height: 54px;
   }
 }
+
+.line-face-icon {
+  width: 42px;
+  height: 42px;
+  border: 3px solid #9ca3af;
+  border-radius: 50%;
+  position: relative;
+  display: inline-block;
+}
+
+.line-face-icon::before,
+.line-face-icon::after {
+  content: "";
+  width: 4px;
+  height: 4px;
+  background: #9ca3af;
+  border-radius: 50%;
+  position: absolute;
+  top: 12px;
+}
+
+.line-face-icon::before {
+  left: 11px;
+}
+
+.line-face-icon::after {
+  right: 11px;
+}
+
+.line-face-icon .face-mouth {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.line-face-icon.happy .face-mouth {
+  width: 16px;
+  height: 9px;
+  border-bottom: 3px solid #9ca3af;
+  border-radius: 0 0 20px 20px;
+  top: 22px;
+}
+
+.line-face-icon.normal .face-mouth {
+  width: 16px;
+  height: 3px;
+  background: #9ca3af;
+  top: 25px;
+}
+
+.line-face-icon.sad .face-mouth {
+  width: 16px;
+  height: 9px;
+  border-top: 3px solid #9ca3af;
+  border-radius: 20px 20px 0 0;
+  top: 25px;
+}
+
+.active-character-mood .line-face-icon {
+  border-color: #e8a5bd;
+}
+
+.active-character-mood .line-face-icon::before,
+.active-character-mood .line-face-icon::after,
+.active-character-mood .line-face-icon.normal .face-mouth {
+  background: #e8a5bd;
+}
+
+.active-character-mood .line-face-icon.happy .face-mouth {
+  border-bottom-color: #e8a5bd;
+}
+
+.active-character-mood .line-face-icon.sad .face-mouth {
+  border-top-color: #e8a5bd;
+}
+
+.legend-face {
+  width: 22px;
+  height: 22px;
+  border: 2px solid #e8a5bd;
+  border-radius: 50%;
+  position: relative;
+  display: inline-block;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+.legend-face::before,
+.legend-face::after {
+  content: "";
+  width: 3px;
+  height: 3px;
+  background: #e8a5bd;
+  border-radius: 50%;
+  position: absolute;
+  top: 6px;
+}
+
+.legend-face::before {
+  left: 6px;
+}
+
+.legend-face::after {
+  right: 6px;
+}
+
+.legend-face .face-mouth {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.legend-face.happy .face-mouth {
+  width: 9px;
+  height: 5px;
+  border-bottom: 2px solid #e8a5bd;
+  border-radius: 0 0 12px 12px;
+  top: 12px;
+}
+
+.legend-face.normal .face-mouth {
+  width: 9px;
+  height: 2px;
+  background: #e8a5bd;
+  top: 14px;
+}
+
+.legend-face.sad .face-mouth {
+  width: 9px;
+  height: 5px;
+  border-top: 2px solid #e8a5bd;
+  border-radius: 12px 12px 0 0;
+  top: 14px;
+}
