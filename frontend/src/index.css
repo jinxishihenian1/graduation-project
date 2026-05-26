@@ -9,11 +9,42 @@ body {
   font-family: Arial, sans-serif;
 }
 
+button {
+  border: none;
+  border-radius: 16px;
+  padding: 14px;
+  background: #e8a5bd;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  font-size: 15px;
+}
+
+textarea {
+  resize: none;
+}
+
+/* 로그인 / 회원가입 */
+
 .auth-page {
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  background: #f5f3ef;
 }
 
 .auth-card {
@@ -41,31 +72,6 @@ body {
   gap: 14px;
 }
 
-input,
-textarea,
-select {
-  width: 100%;
-  padding: 14px;
-  border: 1px solid #e5e7eb;
-  border-radius: 14px;
-  font-size: 15px;
-}
-
-textarea {
-  height: 120px;
-  resize: none;
-}
-
-button {
-  border: none;
-  border-radius: 16px;
-  padding: 14px;
-  background: #e8a5bd;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-}
-
 .auth-card a {
   display: block;
   margin-top: 20px;
@@ -73,11 +79,56 @@ button {
   text-decoration: none;
 }
 
+/* 공통 하단 네비게이션 */
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 92px;
+  background: white;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid #e5e7eb;
+  z-index: 100;
+}
+
+.bottom-nav button {
+  background: white;
+  color: #6b7280;
+  border-radius: 0;
+  font-size: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: center;
+  justify-content: center;
+}
+
+.bottom-nav span {
+  font-size: 15px;
+}
+
+.bottom-nav .active-nav {
+  color: #e8a5bd;
+}
+
+/* 커뮤니티 */
+
 .community-page {
   max-width: 720px;
   min-height: 100vh;
   margin: 0 auto;
-  padding: 40px 24px 100px;
+  padding: 40px 24px 120px;
+}
+
+.bg-pink {
+  background: #f5f3ef;
+}
+
+.bg-blue {
+  background: #eef6ff;
 }
 
 .community-header {
@@ -94,199 +145,6 @@ button {
 .community-header p {
   margin-top: 8px;
   color: #6b7280;
-}
-
-.user-badge {
-  background: #fce7f0;
-  padding: 12px 22px;
-  border-radius: 20px;
-  margin-bottom: 8px;
-  text-align: center;
-}
-
-.logout-btn {
-  padding: 8px 14px;
-  font-size: 14px;
-  background: #9ca3af;
-}
-
-.mood-box,
-.write-box,
-.post-list {
-  background: white;
-  border-radius: 24px;
-  padding: 28px;
-  margin-top: 24px;
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
-}
-
-.mood-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
-  margin-top: 20px;
-}
-
-.mood-grid button {
-  background: #fdeff5;
-  color: #1f2937;
-  height: 90px;
-}
-
-.write-box form {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.post-card {
-  background: #fff7fa;
-  border-radius: 20px;
-  padding: 22px;
-  margin-top: 18px;
-}
-
-.post-top {
-  display: flex;
-  justify-content: space-between;
-  color: #6b7280;
-  font-size: 14px;
-}
-
-.category {
-  background: #e8a5bd;
-  color: white;
-  padding: 6px 12px;
-  border-radius: 14px;
-}
-
-.post-actions {
-  display: flex;
-  gap: 12px;
-  margin-top: 16px;
-}
-
-.post-actions button {
-  background: white;
-  color: #e8a5bd;
-  border: 1px solid #e8a5bd;
-}
-
-.comments {
-  margin-top: 16px;
-  padding: 12px;
-  background: white;
-  border-radius: 14px;
-}
-.post-info {
-  display: flex;
-  gap: 16px;
-  margin-top: 12px;
-  color: #6b7280;
-  font-size: 14px;
-}
-
-.delete-btn {
-  background: #9ca3af;
-  color: white;
-}
-
-.comment-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 12px;
-  border-bottom: 1px solid #f3f4f6;
-  padding: 8px 0;
-}
-
-.comment-delete-btn {
-  padding: 6px 10px;
-  font-size: 12px;
-  background: #9ca3af;
-  color: white;
-}
-.section-title-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.participant-badge {
-  background: #fdeff5;
-  color: #374151;
-  padding: 10px 20px;
-  border-radius: 20px;
-}
-
-.mood-grid-six {
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.mood-grid button {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-}
-
-.mood-emoji {
-  font-size: 28px;
-}
-
-.selected-mood {
-  border: 2px solid #e8a5bd;
-}
-
-.filter-box,
-.ai-box {
-  background: white;
-  border-radius: 24px;
-  padding: 28px;
-  margin-top: 24px;
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
-}
-
-.search-input {
-  margin-bottom: 22px;
-}
-
-.filter-group h3 {
-  margin-bottom: 12px;
-}
-
-.chip-row {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
-.chip {
-  background: #f3f4f6;
-  color: #1f2937;
-  padding: 10px 24px;
-  border-radius: 18px;
-}
-
-.active-chip {
-  background: #e8a5bd;
-  color: white;
-}
-
-.ai-box {
-  background: #fff;
-}
-
-.ai-box h2 {
-  margin-top: 0;
-}
-.bg-pink {
-  background: #f5f3ef;
-}
-
-.bg-blue {
-  background: #eef6ff;
 }
 
 .right-header {
@@ -318,4 +176,867 @@ button {
 
 .blue-circle {
   background: #b8dcff;
+}
+
+.user-badge {
+  background: #fce7f0;
+  color: #374151;
+  padding: 12px 22px;
+  border-radius: 20px;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.logout-btn {
+  padding: 8px 14px;
+  font-size: 14px;
+  background: #9ca3af;
+}
+
+.mood-box,
+.write-box,
+.post-list,
+.filter-box,
+.ai-box {
+  background: white;
+  border-radius: 24px;
+  padding: 28px;
+  margin-top: 24px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+}
+
+.section-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.participant-badge {
+  background: #fdeff5;
+  color: #374151;
+  padding: 10px 20px;
+  border-radius: 20px;
+}
+
+.mood-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.mood-grid-six {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.mood-grid button {
+  background: #fdeff5;
+  color: #1f2937;
+  height: 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.mood-emoji {
+  font-size: 28px;
+}
+
+.selected-mood {
+  border: 2px solid #e8a5bd;
+}
+
+.search-input {
+  margin-bottom: 22px;
+}
+
+.filter-group h3 {
+  margin-bottom: 12px;
+}
+
+.chip-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.chip {
+  background: #f3f4f6;
+  color: #1f2937;
+  padding: 10px 24px;
+  border-radius: 18px;
+}
+
+.active-chip {
+  background: #e8a5bd;
+  color: white;
+}
+
+.ai-box h2 {
+  margin-top: 0;
+}
+
+.write-box form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.post-card {
+  background: #fff7fa;
+  border-radius: 20px;
+  padding: 22px;
+  margin-top: 18px;
+}
+
+.post-top {
+  display: flex;
+  justify-content: space-between;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.category {
+  background: #e8a5bd;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 14px;
+}
+
+.post-info {
+  display: flex;
+  gap: 16px;
+  margin-top: 12px;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.post-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.post-actions button {
+  background: white;
+  color: #e8a5bd;
+  border: 1px solid #e8a5bd;
+}
+
+.delete-btn {
+  background: #9ca3af !important;
+  color: white !important;
+  border: none !important;
+}
+
+.comments {
+  margin-top: 16px;
+  padding: 12px;
+  background: white;
+  border-radius: 14px;
+}
+
+.comment-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid #f3f4f6;
+  padding: 8px 0;
+}
+
+.comment-delete-btn {
+  padding: 6px 10px;
+  font-size: 12px;
+  background: #9ca3af;
+  color: white;
+}
+
+/* 캐릭터 페이지 */
+
+.character-page {
+  min-height: 100vh;
+  background: #f5f3ef;
+  padding: 36px 32px 120px;
+  color: #1f2937;
+}
+
+.character-header {
+  max-width: 720px;
+  margin: 0 auto 24px;
+  display: grid;
+  grid-template-columns: 120px 1fr 120px;
+  align-items: center;
+}
+
+.character-title {
+  text-align: center;
+  font-size: 38px;
+  margin: 0;
+}
+
+.character-user-area {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.login-small-btn {
+  padding: 10px 18px;
+  font-size: 14px;
+  border-radius: 16px;
+  background: #e8a5bd;
+  color: white;
+}
+
+.mood-select-card {
+  background: white;
+  border-radius: 22px;
+  padding: 28px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+  max-width: 680px;
+  margin: 0 auto 36px;
+}
+
+.character-mood-btn {
+  height: 132px;
+  background: white;
+  color: #1f2937;
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.active-character-mood {
+  background: #fdeff5;
+  color: #e8a5bd;
+  border: 1.5px solid #e8a5bd;
+}
+
+.mood-face-icon {
+  font-size: 38px;
+  color: #9ca3af;
+}
+
+.character-card {
+  max-width: 680px;
+  height: 360px;
+  background: white;
+  border-radius: 24px;
+  margin: 0 auto 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+}
+
+.character-face {
+  width: 290px;
+  height: 290px;
+  border-radius: 50%;
+  background: #e9a6bd;
+  position: relative;
+}
+
+.dot-eye {
+  width: 20px;
+  height: 20px;
+  background: #1f2937;
+  border-radius: 50%;
+  position: absolute;
+  top: 125px;
+}
+
+.left-eye {
+  left: 90px;
+}
+
+.right-eye {
+  right: 90px;
+}
+
+.normal-mouth {
+  width: 60px;
+  height: 6px;
+  background: #1f2937;
+  position: absolute;
+  left: 115px;
+  top: 170px;
+}
+
+.eye {
+  position: absolute;
+  top: 82px;
+  font-size: 78px;
+  font-weight: bold;
+  color: #1f2937;
+}
+
+.happy-left {
+  left: 80px;
+}
+
+.happy-right {
+  right: 80px;
+}
+
+.smile {
+  width: 70px;
+  height: 40px;
+  border-bottom: 7px solid #1f2937;
+  border-radius: 0 0 50px 50px;
+  position: absolute;
+  left: 110px;
+  top: 145px;
+}
+
+.cheek {
+  width: 50px;
+  height: 34px;
+  background: #f6b3ca;
+  border-radius: 50%;
+  position: absolute;
+  top: 145px;
+}
+
+.left-cheek {
+  left: 42px;
+}
+
+.right-cheek {
+  right: 42px;
+}
+
+.closed-eye {
+  width: 70px;
+  height: 35px;
+  border-bottom: 7px solid #1f2937;
+  border-radius: 0 0 50px 50px;
+  position: absolute;
+  top: 105px;
+}
+
+.left-closed {
+  left: 70px;
+  transform: rotate(18deg);
+}
+
+.right-closed {
+  right: 70px;
+  transform: rotate(-18deg);
+}
+
+.sad-mouth {
+  width: 60px;
+  height: 35px;
+  border-top: 7px solid #1f2937;
+  border-radius: 50px 50px 0 0;
+  position: absolute;
+  left: 115px;
+  top: 180px;
+}
+
+.today-message-box {
+  max-width: 680px;
+  background: white;
+  border-radius: 24px;
+  padding: 34px;
+  margin: 0 auto 24px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+}
+
+.today-message-box:hover {
+  transform: translateY(-2px);
+  transition: 0.2s;
+}
+
+.today-message-box p {
+  background: white;
+  border-radius: 18px;
+  border: 1px solid #f3f4f6;
+  padding: 18px 24px;
+  font-size: 21px;
+  margin: 0;
+}
+
+.quick-action-grid {
+  max-width: 680px;
+  margin: 0 auto 24px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.quick-action-grid button {
+  background: white;
+  color: #1f2937;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* 캐릭터 선호도 모달 */
+
+.food-modal-overlay {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 92px;
+  background: rgba(0, 0, 0, 0.08);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  z-index: 60;
+  padding: 90px 28px 24px;
+}
+
+.food-modal {
+  width: 100%;
+  max-width: 680px;
+  background: #f5f3ef;
+  border-radius: 24px;
+  padding: 28px;
+}
+
+.food-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.food-modal-header h2 {
+  font-size: 28px;
+  margin: 0;
+}
+
+.food-modal-header button {
+  background: none;
+  color: #6b7280;
+  padding: 0;
+  font-size: 18px;
+}
+
+.food-option-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.food-option-list button {
+  background: white;
+  color: #1f2937;
+  text-align: left;
+  padding: 26px 32px;
+  border-radius: 18px;
+  font-size: 22px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.known-info-box {
+  max-width: 680px;
+  background: white;
+  border-radius: 24px;
+  padding: 30px;
+  margin: 0 auto 24px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+}
+
+.known-info-box h2 {
+  margin-top: 0;
+  font-size: 26px;
+}
+
+.known-info-box p {
+  font-size: 20px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pink-dot {
+  width: 12px;
+  height: 12px;
+  background: #e8a5bd;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* 캐릭터 대화 모달 */
+
+.chat-modal-overlay {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 92px;
+  background: rgba(0, 0, 0, 0.15);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  z-index: 50;
+  padding: 24px;
+}
+
+.chat-modal {
+  width: 100%;
+  max-width: 680px;
+  height: 430px;
+  background: white;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+}
+
+.chat-header {
+  height: 76px;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chat-title {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 22px;
+}
+
+.chat-icon {
+  width: 42px;
+  height: 42px;
+  background: #e8f0ff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chat-close {
+  background: none;
+  color: #4b5563;
+  font-size: 34px;
+  padding: 0;
+}
+
+.chat-body {
+  padding: 28px;
+  height: 250px;
+  overflow-y: auto;
+}
+
+.ai-message {
+  max-width: 460px;
+  background: #f3f4f6;
+  border-radius: 18px;
+  padding: 16px 22px;
+  font-size: 20px;
+  margin-bottom: 14px;
+  line-height: 1.5;
+}
+
+.user-message {
+  max-width: 460px;
+  background: #e8a5bd;
+  color: white;
+  border-radius: 18px;
+  padding: 16px 22px;
+  font-size: 20px;
+  margin: 0 0 14px auto;
+  line-height: 1.5;
+}
+
+.chat-input-row {
+  height: 104px;
+  border-top: 1px solid #e5e7eb;
+  padding: 18px 24px;
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.chat-input-row input {
+  flex: 1;
+  border-radius: 18px;
+}
+
+.chat-input-row button {
+  width: 78px;
+  height: 56px;
+  background: #e8a5bd;
+  font-size: 26px;
+}
+
+/* 일기 달력 */
+
+.diary-page {
+  min-height: 100vh;
+  background: #f5f3ef;
+  padding: 28px 32px 120px;
+}
+
+.calendar-card {
+  max-width: 680px;
+  background: white;
+  border-radius: 24px;
+  padding: 34px;
+  margin: 0 auto;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 34px;
+}
+
+.calendar-header h1 {
+  font-size: 30px;
+  margin: 0;
+}
+
+.calendar-arrows {
+  display: flex;
+  gap: 18px;
+}
+
+.calendar-arrows button {
+  background: white;
+  color: #1f2937;
+  font-size: 34px;
+  padding: 4px 12px;
+}
+
+.week-row {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.sunday {
+  color: #ef4444;
+}
+
+.saturday {
+  color: #3b82f6;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 16px;
+}
+
+.calendar-empty {
+  height: 62px;
+}
+
+.calendar-day {
+  height: 62px;
+  background: white;
+  color: #1f2937;
+  border-radius: 18px;
+  font-size: 20px;
+  position: relative;
+}
+
+.calendar-day small {
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #e8a5bd;
+  font-size: 14px;
+}
+
+.diary-written-day {
+  background: #fdeff5;
+  border: 2px solid #e8a5bd;
+  color: #e8a5bd;
+}
+
+.today-day {
+  background: #fdeff5;
+  border: 2px solid #e8a5bd;
+  color: #e8a5bd;
+  font-weight: bold;
+}
+
+.today-label {
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #e8a5bd;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.diary-dot {
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #e8a5bd;
+  font-size: 14px;
+}
+
+.mood-legend {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 34px;
+  color: #6b7280;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* 일기 작성 */
+
+.diary-write-page {
+  min-height: 100vh;
+  background: #f5f3ef;
+  padding-bottom: 120px;
+}
+
+.diary-write-header {
+  height: 96px;
+  background: white;
+  display: grid;
+  grid-template-columns: 70px 1fr 90px;
+  align-items: center;
+  padding: 0 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.diary-write-header h1 {
+  font-size: 26px;
+  margin: 0;
+}
+
+.back-btn {
+  background: none;
+  color: #1f2937;
+  font-size: 34px;
+  padding: 0;
+}
+
+.save-text-btn {
+  background: none;
+  color: #e8a5bd;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 0;
+}
+
+.diary-paper {
+  max-width: 680px;
+  height: 740px;
+  background: white;
+  margin: 28px auto 0;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+  background-image: repeating-linear-gradient(
+    white 0px,
+    white 62px,
+    #e5e7eb 63px
+  );
+}
+
+.diary-title-input {
+  width: 100%;
+  height: 62px;
+  border: none;
+  border-bottom: 1px solid #e5e7eb;
+  border-radius: 0;
+  font-size: 24px;
+  font-weight: bold;
+  background: transparent;
+  padding: 0 34px;
+}
+
+.diary-content-input {
+  width: 100%;
+  height: 650px;
+  border: none;
+  border-radius: 0;
+  font-size: 22px;
+  line-height: 63px;
+  background: transparent;
+  padding: 0 34px;
+  resize: none;
+}
+
+/* 모바일 보정 */
+
+@media (max-width: 520px) {
+  .auth-card {
+    width: 90%;
+  }
+
+  .community-header,
+  .section-title-row {
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .character-title {
+    font-size: 28px;
+  }
+
+  .character-header {
+    grid-template-columns: 80px 1fr 80px;
+  }
+
+  .mood-select-card,
+  .mood-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .character-mood-btn {
+    height: 110px;
+    font-size: 16px;
+  }
+
+  .character-card {
+    height: 300px;
+  }
+
+  .character-face {
+    width: 230px;
+    height: 230px;
+  }
+
+  .quick-action-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .calendar-grid {
+    gap: 8px;
+  }
+
+  .calendar-day,
+  .calendar-empty {
+    height: 54px;
+  }
 }

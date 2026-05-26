@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 function Community() {
+  const navigate = useNavigate();
+
   const [posts, setPosts] = useState([]);
   const [comments, setComments] = useState({});
   const [searchText, setSearchText] = useState("");
@@ -209,7 +212,7 @@ function Community() {
     localStorage.removeItem("token");
     localStorage.removeItem("USER_ID");
     localStorage.removeItem("USER_NAME");
-    window.location.href = "/login";
+    navigate("/login");
   };
 
   const filteredPosts = posts.filter((post) => {
@@ -261,9 +264,15 @@ function Community() {
 
           <div className="user-badge">{USER_NAME || "Guest"}</div>
 
-          <button className="logout-btn" onClick={handleLogout}>
-            로그아웃
-          </button>
+          {USER_NAME ? (
+            <button className="logout-btn" onClick={handleLogout}>
+              로그아웃
+            </button>
+          ) : (
+            <button className="logout-btn" onClick={() => navigate("/login")}>
+              로그인
+            </button>
+          )}
         </div>
       </header>
 
@@ -423,6 +432,24 @@ function Community() {
           </div>
         ))}
       </section>
+
+      <nav className="bottom-nav">
+        <button onClick={() => navigate("/character")}>
+          ⌂<span>캐릭터</span>
+        </button>
+
+        <button onClick={() => navigate("/diary")}>
+          ▣<span>일기</span>
+        </button>
+
+        <button>
+          ⌁<span>리포트</span>
+        </button>
+
+        <button className="active-nav" onClick={() => navigate("/community")}>
+          ♙<span>커뮤니티</span>
+        </button>
+      </nav>
     </div>
   );
 }
